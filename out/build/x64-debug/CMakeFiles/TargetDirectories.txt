@@ -1,3 +1,0 @@
-C:/programming/denoise/out/build/x64-debug/CMakeFiles/denoise.dir
-C:/programming/denoise/out/build/x64-debug/CMakeFiles/edit_cache.dir
-C:/programming/denoise/out/build/x64-debug/CMakeFiles/rebuild_cache.dir
