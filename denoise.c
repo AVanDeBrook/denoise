@@ -92,7 +92,7 @@ int main(int argc, char *argv[])
 		.format = 0
 	};
 	// TODO: replace with info from command line OR separate into functions for an API/library
-	SNDFILE* waveform = sf_open("C:\\programming\\denoise\\audio_samples\\an251-fash-b-noise.wav", SFM_READ, &info);
+	SNDFILE* waveform = sf_open("audio_samples/an251-fash-b-noise.wav", SFM_READ, &info);
 
 	if (waveform == NULL) {
 		fprintf(stderr, "[Error] File not found\n");
@@ -142,7 +142,7 @@ int main(int argc, char *argv[])
 	printf("[Info] Running model...\n");
 	for (int i = 0; i < info.frames / num_samples_per_frame; i++) {
 		// run model on audio chunk (individual frame)
-		err = NvAFX_Run(handle, input, output, num_samples_per_frame, info.channels);
+		err = NvAFX_Run(handle, (const float **)input, output, num_samples_per_frame, info.channels);
 
 		if (err != NVAFX_STATUS_SUCCESS) {
 			fprintf(stderr, "[Error] Error running audio effect: %d\n", err);
@@ -170,7 +170,7 @@ int main(int argc, char *argv[])
 	info.format     = SF_FORMAT_WAV|SF_FORMAT_FLOAT;
 
 	// TODO: replace with info from command line OR separate into functions for an API
-	waveform = sf_open("C:\\programming\\denoise\\audio_samples\\an251-fash-b-denoised.wav", SFM_WRITE, &info);
+	waveform = sf_open("audio_samples/an251-fash-b-denoised.wav", SFM_WRITE, &info);
 
 	if (waveform == NULL) {
 		fprintf(stderr, "[Error] Error creating output file\n");
