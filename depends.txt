@@ -1,0 +1,2 @@
+NVAFX SDK: https://docs.nvidia.com/deeplearning/maxine/audio-effects-sdk/index.html#getting-started-win
+libsndfile: http://www.mega-nerd.com/libsndfile/#Download
