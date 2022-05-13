@@ -1,8 +1,8 @@
 ﻿#include <stdio.h>
 #include <stdlib.h>
 #include "denoise.h"
-#include "lib/sndfile.h"
-#include "lib/nvAudioEffects.h"
+#include "sndfile.h"
+#include "nvAudioEffects.h"
 
 /**
  * @brief Maximum of 2 channel audio
