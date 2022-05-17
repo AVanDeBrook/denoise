@@ -1,5 +1,11 @@
+# Visual studio project directories
 .vs
 .vs/**
 
+# VS Code workspace directories
 .vscode
 .vscode/**
+
+# Project build artifacts
+build
+build/**
