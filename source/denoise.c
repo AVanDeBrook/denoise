@@ -1,7 +1,7 @@
 ﻿#include <stdio.h>
 #include <stdlib.h>
 #include "denoise.h"
-#include "sndfile.h"
+#include <sndfile.h>
 #include "nvAudioEffects.h"
 
 /**
@@ -30,6 +30,8 @@ int main(int argc, char *argv[])
 	NvAFX_Status err = NVAFX_STATUS_SUCCESS;
 	unsigned int num_samples_per_frame = SAMPLES_PER_FRAME;
 	unsigned int num_channels = MAX_CHANNELS;
+
+	//err = NvAFX_InitializeLogger(LOG_LEVEL_INFO, LOG_TARGET_STDERR, NULL, NULL, NULL);
 
 	// handle for the denoise effect (created below)
 	NvAFX_Handle handle = NULL;
@@ -62,7 +64,7 @@ int main(int argc, char *argv[])
 
 	// 16k sample rate model (just because AN4 dataset is all 16k float audio)
 	// TODO: move model path into a config file or command line argument (?)
-	err = NvAFX_SetString(handle, NVAFX_PARAM_MODEL_PATH, "C:\\Program Files\\NVIDIA Corporation\\NVIDIA Audio Effects SDK\\models\\denoiser_16k.trtpkg");
+	err = NvAFX_SetString(handle, NVAFX_PARAM_MODEL_PATH, "/usr/local/Audio_Effects_SDK/models/sm_86/denoiser_16k.trtpkg");
 	if (err != NVAFX_STATUS_SUCCESS) {
 		fprintf(stderr, "[Error] Error setting model path: %d\n", err);
 		status = STATUS_NVAFX_ERROR;

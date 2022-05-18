@@ -7,5 +7,5 @@ add_executable(denoise ${SOURCE})
 target_include_directories(denoise PUBLIC ${SOURCE_INCLUDE} ${LIB_INCLUDE})
 
 target_link_libraries(denoise PUBLIC NVAudioEffects)
-target_link_libraries(denoise PUBLIC libsndfile)
+target_link_libraries(denoise PUBLIC sndfile)
 target_link_libraries(denoise ${LINK_LIBRARIES})
