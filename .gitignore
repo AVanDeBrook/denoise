@@ -9,3 +9,5 @@
 # Project build artifacts
 build
 build/**
+
+CMakeUserPresets.json

@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
 		return status;
 	} else {
 #ifdef SUPERRES
-		printf("[Info] Chained effect (dnoiser, super-resolution) created\n");
+		printf("[Info] Chained effect (denoiser, super-resolution) created\n");
 #else
 		printf("[Info] Denoiser effect created\n");
 #endif

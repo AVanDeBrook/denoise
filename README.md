@@ -16,9 +16,9 @@ Dependencies:
 
 Generate build files:
 ```
-cmake -G Ninja -B build .
+cmake --preset default
 ```
-**Note**: To use the chained denoiser, superresolution effect use `cmake -D SUPERRES=1 -G Ninja -B build .` in place of the command above.
+**Note**: To toggle between the chained effect (denoiser, super-resolution) and denoiser effect, change the `SUPERRES` (`1` enables the super-resolution effect, `0` disables it) cache variable in `CMakePresets.json` or use the command `cmake -D SUPERRES=<value> --preset default`.
 
 Build project:
 ```
