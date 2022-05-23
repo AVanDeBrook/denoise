@@ -5,7 +5,7 @@ Two example audio files are included in this repository (under `audio_samples`) 
 
 **At the time of writing this, the code in this repository has been developed and tested on Windows only.**
 
-## Building and Running (Windows)
+## Building and Running
 Dependencies:
 * (Build) [Cmake](https://cmake.org/download/)
 * (Build) [Ninja](https://github.com/ninja-build/ninja/releases)
@@ -18,6 +18,8 @@ Generate build files:
 ```
 cmake -G Ninja -B build .
 ```
+**Note**: To use the chained denoiser, superresolution effect use `cmake -D SUPERRES=1 -G Ninja -B build .` in place of the command above.
+
 Build project:
 ```
 ninja -C build

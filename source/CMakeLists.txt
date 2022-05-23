@@ -4,6 +4,10 @@ source_group("source" FILES ${SOURCE})
 
 add_executable(denoise ${SOURCE})
 
+if(DEFINED SUPERRES AND SUPERRES EQUAL 1)
+    target_compile_definitions(denoise PUBLIC SUPERRES)
+endif()
+
 target_include_directories(denoise PUBLIC ${SOURCE_INCLUDE} ${LIB_INCLUDE})
 
 target_link_libraries(denoise PUBLIC NVAudioEffects)
